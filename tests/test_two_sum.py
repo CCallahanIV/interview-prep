@@ -1,6 +1,6 @@
 import pytest
 
-from two_sum import two_sum_solution_brute_force, two_sum_solution
+from leetcode.amazon.two_sum import two_sum_solution_brute_force, two_sum_solution
 
 TEST_FUNCTIONS = [two_sum_solution_brute_force, two_sum_solution]
 

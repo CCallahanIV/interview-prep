@@ -1,6 +1,6 @@
 import pytest
 
-from treasure_island import treasure_island_recursive_solution, treasure_island_bfs_solution
+from leetcode.amazon.treasure_island import treasure_island_recursive_solution, treasure_island_bfs_solution
 
 TEST_FUNCS = [
     treasure_island_bfs_solution, treasure_island_recursive_solution

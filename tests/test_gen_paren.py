@@ -1,6 +1,6 @@
 import pytest
 
-from gen_paren import gen_paren_solution
+from leetcode.amazon.gen_paren import gen_paren_solution
 
 @pytest.mark.parametrize(
     "n,exp",

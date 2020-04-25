@@ -9,4 +9,4 @@ dev:
 	$(venv-dir)/bin/pip install -r requirements.txt
 
 test:
-	$(venv-dir)/bin/py.test src/ --cov=src --cov-report term-missing
+	$(venv-dir)/bin/py.test tests/ --cov=src --cov-report term-missing
