@@ -17,7 +17,7 @@ def _get_adjacent_positions(rows: int, columns: int, curr: Position):
     next_moves = []
     for drow, dcol in [(0,1), (0,-1), (1, 0), (-1, 0)]:
         new_pos = Position(curr.row + drow, curr.col + dcol)
-        if _in_bounds(new_pos):
+        if _in_bounds(rows, columns, new_pos):
             next_moves.append(new_pos)
     return next_moves
 
@@ -50,7 +50,7 @@ def min_hours(rows: int, columns: int, grid: List[List[int]]) -> int:
 def min_hours_2(rows: int, columns: int, grid: List[List[int]]) -> int:
     """This time, we'll track new zombies as we go."""
 
-    zombies = [Position(i, j) for i in range(rows) for j in range(columns) if grid[i][j] == 0]
+    zombies = [Position(i, j) for i in range(rows) for j in range(columns) if grid[i][j] == 1]
     hours = 0
     while True:
         new = []

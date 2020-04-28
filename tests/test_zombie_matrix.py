@@ -1,8 +1,10 @@
+from copy import deepcopy
+
 import pytest
 
-from leetcode.amazon.zombie_matrix import min_hours
+from leetcode.amazon.zombie_matrix import min_hours, min_hours_2
 
-TEST_FUNCTIONS = [min_hours]
+TEST_FUNCTIONS = [min_hours, min_hours_2]
 
 @pytest.mark.parametrize(
     "rows,columns,grid,exp",
@@ -22,4 +24,4 @@ TEST_FUNCTIONS = [min_hours]
 )
 def test_min_hours(rows, columns, grid, exp):
     for func in TEST_FUNCTIONS:
-        assert func(rows, columns, grid) == exp
+        assert func(rows, columns, deepcopy(grid)) == exp
