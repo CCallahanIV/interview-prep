@@ -40,6 +40,7 @@ def build_test_tree_unbalanced_1():
     root = Node()
     root.right = Node()
     root.right.right = Node()
+    return root
 
 def build_test_tree_unbalanced_2():
     """More complex example of unbalanced BST."""
@@ -54,9 +55,10 @@ def build_test_tree_unbalanced_2():
 @pytest.mark.parametrize(
     "tree,exp",
     [
-        (
+        pytest.param(
             build_test_tree_1(),
-            False
+            True,
+            id="Null Check"
         ),
         (
             build_test_tree_2(),
@@ -84,5 +86,5 @@ def build_test_tree_unbalanced_2():
         )
     ]
 )
-def test_is_bst_balanced(tree, exp)
-    assert is_bst_balanced(tree, exp)
+def test_is_bst_balanced(tree, exp):
+    assert is_bst_balanced(tree) is exp

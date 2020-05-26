@@ -7,7 +7,7 @@ class Node:
 
 
 def is_bst_balanced(root: Node) -> bool:
-    return (get_depth_of_subtree) > -1
+    return get_depth_of_subtree(root) > -1
 
 
 def get_depth_of_subtree(root: Node) -> int:
