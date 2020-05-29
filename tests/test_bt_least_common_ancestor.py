@@ -34,6 +34,26 @@ def simple_tree():
     return node_a, node_b, root, exp_node
 
 
+def build_sample_tree_target_nodes_not_leaves():
+    root = Node(
+        left=Node(
+            left=Node(
+                left=Node(),
+                right=Node()
+            ),
+            right=Node()
+        ),
+        right=Node(
+            left=Node(),
+            right=Node()
+        )
+    )
+    node_a = root.left.left
+    node_b = root.right
+    exp_node = root
+    return node_a, node_b, root, exp_node
+
+
 @pytest.mark.parametrize(
     "node_a,node_b,root,exp_node",
     [
@@ -44,6 +64,10 @@ def simple_tree():
         pytest.param(
             *build_sample_tree(),
             id="Simple tree, root node is LCA"
+        ),
+        pytest.param(
+            *build_sample_tree_target_nodes_not_leaves(),
+            id="Example problem tree, target nodes are not leaves and root node is LCA."
         ),
     ]
 )
