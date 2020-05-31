@@ -22,9 +22,11 @@ def example_problem():
     node_4.other = node_2
     return root
 
+
 def no_other_pointers():
     root = Node(data=1, nxt=Node(data=2, nxt=Node(data=3)))
     return root
+
 
 @pytest.mark.parametrize(
     "root",
